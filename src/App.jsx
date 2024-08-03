@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import GlobalStyles from "./styles/GlobalStyles";
 
 //styled componets styling
 const H1 = styled.h1`
@@ -12,9 +13,10 @@ const Button = styled.button`
   padding: 1.2rem 1.6rem;
   font-weight: 500;
   border: none;
-  border-radius: 7px;
-  background-color: purple;
-  color: white;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--color-brand-600);
+  color: var(--color-brand-50);
+  box-shadow: var(--shadow-sm);
   margin: 20px;
   cursor: pointer;
 `;
@@ -32,12 +34,15 @@ const StyledApp = styled.div`
 
 function App() {
   return (
-    <StyledApp>
-      <H1>The wild Oasis</H1>
-      <Button onClick={() => alert("Cekirao si se!")}>Check in</Button>
-      <Button onClick={() => alert("Odjavio si se!")}>Check out</Button>
-      <Input type="number" placeholder="Number of Guests"></Input>
-    </StyledApp>
+    <>
+      <GlobalStyles />
+      <StyledApp>
+        <H1>The wild Oasis</H1>
+        <Button onClick={() => alert("Cekirao si se!")}>Check in</Button>
+        <Button onClick={() => alert("Odjavio si se!")}>Check out</Button>
+        <Input type="number" placeholder="Number of Guests"></Input>
+      </StyledApp>
+    </>
   );
 }
 
