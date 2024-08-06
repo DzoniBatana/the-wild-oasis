@@ -40,7 +40,6 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 
-// eslint-disable-next-line
 function CabinRow({ cabin }) {
   const { name, maxCapacity, regularPrice, discount, image } = cabin;
 
