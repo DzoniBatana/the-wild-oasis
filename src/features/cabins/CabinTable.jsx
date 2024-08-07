@@ -3,7 +3,7 @@ import { getCabins } from "../../services/apiCabins";
 import styled from "styled-components";
 
 import Spinner from "../../ui//Spinner";
-import CabinRow from "./CabinRow";
+import CabinRow from "../../features/cabins/CabinRow";
 
 // eslint-disable-next-line
 const Table = styled.div`
