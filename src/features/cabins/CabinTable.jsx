@@ -37,7 +37,7 @@ function CabinTable() {
     data: cabins, // eslint-disable-line
     error, // eslint-disable-line
   } = useQuery({
-    queryKey: ["cabin"],
+    queryKey: ["cabins"],
     queryFn: getCabins,
   });
 
