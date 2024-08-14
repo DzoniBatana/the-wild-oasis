@@ -155,13 +155,14 @@ function CreateCabinForm() {
         <FileInput id="image" accept="image/*" />
       </FormRow>
 
-      <FormRow2>
+      <FormRow>
         {/* type is an HTML attribute! */}
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
         <Button disabled={isCreating}>Add cabin</Button>
-      </FormRow2>
+      </FormRow>
+      <FormRow2></FormRow2>
     </Form>
   );
 }
