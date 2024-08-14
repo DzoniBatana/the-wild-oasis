@@ -15,7 +15,6 @@ const FormRow = styled.div`
   align-items: center;
   grid-template-columns: 24rem 1fr 1.2fr;
   gap: 2.4rem;
-
   padding: 1.2rem 0;
 
   &:first-child {
@@ -83,7 +82,6 @@ function CreateCabinForm() {
             required: "This field is required",
           })}
         />
-        {errors?.name?.message && <Error>{errors.name.message}</Error>}
       </FormRow>
 
       <FormRow label="Maximum capacity" errors={errors?.maxCapacity?.message}>
