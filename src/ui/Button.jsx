@@ -9,18 +9,21 @@ const sizes = {
     font-weight: 600;
     text-align: center;
     margin-bottom: 10px;
+    margin-top: 20px;
   `,
   medium: css`
     font-size: 1.4rem;
     padding: 1.2rem 1.6rem;
     font-weight: 500;
     margin-bottom: 10px;
+    margin-top: 20px;
   `,
   large: css`
     font-size: 1.6rem;
     padding: 1.2rem 2.4rem;
     font-weight: 500;
     margin-bottom: 10px;
+    margin-top: 20px;
   `,
 };
 // eslint-disable-next-line
