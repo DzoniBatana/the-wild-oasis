@@ -36,12 +36,12 @@ const Amount = styled.div`
 
 function BookingRow({
   booking: {
-    id: bookingId,
-    created_at,
+    id: bookingId, // eslint-disable-line
+    created_at, // eslint-disable-line
     startDate,
     endDate,
     numNights,
-    numGuests,
+    numGuests, // eslint-disable-line
     totalPrice,
     status,
     guests: { fullName: guestName, email },
