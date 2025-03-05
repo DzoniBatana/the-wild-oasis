@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 
+// eslint-disable-next-line
 const sizes = {
   small: css`
     font-size: 1.2rem;
@@ -20,6 +21,7 @@ const sizes = {
   `,
 };
 
+// eslint-disable-next-line
 const variations = {
   primary: css`
     color: var(--color-brand-50);
@@ -47,3 +49,21 @@ const variations = {
     }
   `,
 };
+
+const Button = styled.button`
+  font-size: 1.4rem;
+  padding: 1.2rem 1.6rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 7px;
+  background-color: var(--color-brand-500);
+  color: var(--color-brand-50);
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-brand-700);
+  }
+`;
+
+export default Button;
