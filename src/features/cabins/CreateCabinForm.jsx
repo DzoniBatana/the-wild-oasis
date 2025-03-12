@@ -65,7 +65,7 @@ function CreateCabinForm() {
   });
 
   function onSubmit(data) {
-    mutate(data);
+    mutate({ ...data, image: data.image[0] });
   }
 
   function onError(errors) {
@@ -75,7 +75,9 @@ function CreateCabinForm() {
   return (
     <Form onSubmit={handleSubmit(onSubmit, onError)}>
       <FormRow>
-        <Label htmlFor="name">Cabin name</Label>
+        <Label htmlFor="name" label="Cabin Name">
+          Cabin name
+        </Label>
         <Input
           type="text"
           id="name"
@@ -88,7 +90,9 @@ function CreateCabinForm() {
       </FormRow>
 
       <FormRow>
-        <Label htmlFor="maxCapacity">Maximum capacity</Label>
+        <Label htmlFor="maxCapacity" label="MaxCapacity">
+          Maximum capacity
+        </Label>
         <Input
           type="number"
           id="maxCapacity"
@@ -107,7 +111,9 @@ function CreateCabinForm() {
       </FormRow>
 
       <FormRow label="Regular Price" error={errors?.regularPrice?.message}>
-        <Label htmlFor="regularPrice">Regular price</Label>
+        <Label htmlFor="regularPrice" label="Regular Price">
+          Regular price
+        </Label>
         <Input
           type="number"
           id="regularPrice"
@@ -126,7 +132,9 @@ function CreateCabinForm() {
       </FormRow>
 
       <FormRow label="Discount" error={errors?.discount?.message}>
-        <Label htmlFor="discount">Discount</Label>
+        <Label htmlFor="discount" label="Discount">
+          Discount
+        </Label>
         <Input
           type="number"
           id="discount"
@@ -143,7 +151,9 @@ function CreateCabinForm() {
       </FormRow>
 
       <FormRow>
-        <Label htmlFor="description">Description for website</Label>
+        <Label htmlFor="description" label="Description">
+          Description for website
+        </Label>
         <Textarea
           type="number"
           id="description"
@@ -153,11 +163,17 @@ function CreateCabinForm() {
         />
       </FormRow>
 
-      <FormRow>
+      <FormRow label="Cabni photo">
         <Label htmlFor="image" disabled={isCreating}>
           Cabin photo{" "}
         </Label>
-        <FileInput id="image" accept="image/*" />
+        <FileInput
+          id="image"
+          accept="image/*"
+          {...register("image", {
+            required: "This field is not that important, but is required",
+          })}
+        />
       </FormRow>
 
       <FormRow>
