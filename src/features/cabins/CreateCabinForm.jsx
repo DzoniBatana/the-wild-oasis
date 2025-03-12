@@ -79,6 +79,7 @@ function CreateCabinForm() {
         <Input
           type="text"
           id="name"
+          disabled={isCreating}
           {...register("name", {
             required: "This field is required",
           })}
@@ -86,11 +87,12 @@ function CreateCabinForm() {
         {errors?.name?.message && <Error>{errors.name.message}</Error>}
       </FormRow>
 
-      <FormRow label="Maximum capacity" error={errors?.maxCapacity?.message}>
+      <FormRow>
         <Label htmlFor="maxCapacity">Maximum capacity</Label>
         <Input
           type="number"
           id="maxCapacity"
+          disabled={isCreating}
           {...register("maxCapacity", {
             required: "This field is required",
             min: {
@@ -99,6 +101,9 @@ function CreateCabinForm() {
             },
           })}
         />
+        {errors?.maxCapacity?.message && (
+          <Error>{errors.maxCapacity.message}</Error>
+        )}
       </FormRow>
 
       <FormRow label="Regular Price" error={errors?.regularPrice?.message}>
@@ -106,6 +111,7 @@ function CreateCabinForm() {
         <Input
           type="number"
           id="regularPrice"
+          disabled={isCreating}
           {...register("regularPrice", {
             required: "This field is required",
             min: {
@@ -114,6 +120,9 @@ function CreateCabinForm() {
             },
           })}
         />
+        {errors?.regularPrice?.message && (
+          <Error>{errors.regularPrice.message}</Error>
+        )}
       </FormRow>
 
       <FormRow label="Discount" error={errors?.discount?.message}>
@@ -122,6 +131,7 @@ function CreateCabinForm() {
           type="number"
           id="discount"
           defaultValue={0}
+          disabled={isCreating}
           {...register("discount", {
             required: "This field is required",
             validate: (value) =>
@@ -129,6 +139,7 @@ function CreateCabinForm() {
               "Discount should be less than regular price",
           })}
         />
+        {errors?.discount?.message && <Error>{errors.discount.message} </Error>}
       </FormRow>
 
       <FormRow>
@@ -137,12 +148,15 @@ function CreateCabinForm() {
           type="number"
           id="description"
           defaultValue=""
+          disabled={isCreating}
           {...register("description")}
         />
       </FormRow>
 
       <FormRow>
-        <Label htmlFor="image">Cabin photo</Label>
+        <Label htmlFor="image" disabled={isCreating}>
+          Cabin photo{" "}
+        </Label>
         <FileInput id="image" accept="image/*" />
       </FormRow>
 
