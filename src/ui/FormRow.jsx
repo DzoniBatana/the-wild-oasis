@@ -1,3 +1,4 @@
+/* eslint-disable-next-line react/prop-types */
 import styled from "styled-components";
 
 const StyledFormRow = styled.div`
