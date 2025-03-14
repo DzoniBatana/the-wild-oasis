@@ -37,7 +37,6 @@ const Error = styled.span`
   color: var(--color-red-700);
 `;
 
-// eslint-disable-next-line
 function FormRow({ label, error, children }) {
   return (
     <StyledFormRow>

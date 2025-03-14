@@ -10,8 +10,9 @@ import Form from "../../ui/Form";
 import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
+import FormRow from "../../ui/FormRow";
 
-const FormRow = styled.div`
+const FormRow2 = styled.div`
   display: grid;
   align-items: center;
   grid-template-columns: 24rem 1fr 1.2fr;
@@ -75,7 +76,7 @@ function CreateCabinForm() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit, onError)}>
-      <FormRow>
+      <FormRow2>
         <Label htmlFor="name" label="Cabin Name">
           Cabin name
         </Label>
@@ -88,9 +89,20 @@ function CreateCabinForm() {
           })}
         />
         {errors?.name?.message && <Error>{errors.name.message}</Error>}
+      </FormRow2>
+
+      <FormRow label="Cabin name" error={errors?.name?.message}>
+        <Input
+          type="text"
+          id="name"
+          disabled={isCreating}
+          {...register("name", {
+            required: "This field is required",
+          })}
+        />
       </FormRow>
 
-      <FormRow>
+      <FormRow2>
         <Label htmlFor="maxCapacity" label="MaxCapacity">
           Maximum capacity
         </Label>
@@ -109,9 +121,9 @@ function CreateCabinForm() {
         {errors?.maxCapacity?.message && (
           <Error>{errors.maxCapacity.message}</Error>
         )}
-      </FormRow>
+      </FormRow2>
 
-      <FormRow label="Regular Price" error={errors?.regularPrice?.message}>
+      <FormRow2 label="Regular Price" error={errors?.regularPrice?.message}>
         <Label htmlFor="regularPrice" label="Regular Price">
           Regular price
         </Label>
@@ -130,9 +142,9 @@ function CreateCabinForm() {
         {errors?.regularPrice?.message && (
           <Error>{errors.regularPrice.message}</Error>
         )}
-      </FormRow>
+      </FormRow2>
 
-      <FormRow label="Discount" error={errors?.discount?.message}>
+      <FormRow2 label="Discount" error={errors?.discount?.message}>
         <Label htmlFor="discount" label="Discount">
           Discount
         </Label>
@@ -149,9 +161,9 @@ function CreateCabinForm() {
           })}
         />
         {errors?.discount?.message && <Error>{errors.discount.message} </Error>}
-      </FormRow>
+      </FormRow2>
 
-      <FormRow>
+      <FormRow2>
         <Label htmlFor="description" label="Description">
           Description for website
         </Label>
@@ -162,9 +174,9 @@ function CreateCabinForm() {
           disabled={isCreating}
           {...register("description")}
         />
-      </FormRow>
+      </FormRow2>
 
-      <FormRow label="Cabni photo">
+      <FormRow2 label="Cabni photo">
         <Label htmlFor="image" disabled={isCreating}>
           Cabin photo{" "}
         </Label>
@@ -175,15 +187,15 @@ function CreateCabinForm() {
             required: "This field is not that important, but is required",
           })}
         />
-      </FormRow>
+      </FormRow2>
 
-      <FormRow>
+      <FormRow2>
         {/* type is an HTML attribute! */}
         <Button variation="secondary" type="reset">
           Cancel
         </Button>
         <Button disabled={isCreating}>Add cabin</Button>
-      </FormRow>
+      </FormRow2>
     </Form>
   );
 }
