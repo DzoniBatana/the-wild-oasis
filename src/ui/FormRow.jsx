@@ -1,4 +1,4 @@
-/* eslint-disable-next-line react/prop-types */
+/* eslint react/prop-types: 0 */
 import styled from "styled-components";
 
 const StyledFormRow = styled.div`
@@ -48,3 +48,4 @@ function FormRow({ label, error, children }) {
 }
 
 export default FormRow;
+/* eslint react/prop-types: 0 */

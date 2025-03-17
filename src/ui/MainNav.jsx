@@ -69,7 +69,6 @@ function MainNav() {
             <span>Bookings</span>
           </StyledNavLink>
         </li>
-
         <li>
           <StyledNavLink to="/cabins">
             <HiOutlineHomeModern />

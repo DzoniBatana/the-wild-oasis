@@ -1,10 +1,10 @@
-/* eslint-disable react/prop-types */
+/* eslint react/prop-types: 0 */
 import styled from "styled-components";
-import CreateCabinForm from "./CreateCabinForm";
-
-import { formatCurrency } from "../../utils/helpers";
 import { useState } from "react";
+
+import CreateCabinForm from "./CreateCabinForm";
 import { useDeleteCabin } from "./useDeleteCabin";
+import { formatCurrency } from "../../utils/helpers";
 import { HiPencil, HiSquare2Stack, HiTrash } from "react-icons/hi2";
 import { useCreateCabin } from "./useCreateCabin";
 
@@ -47,11 +47,11 @@ const Discount = styled.div`
   color: var(--color-green-700);
 `;
 
-// eslint-disable-next-line
 function CabinRow({ cabin }) {
   const [showForm, setShowForm] = useState(false);
   const { isDeleting, deleteCabin } = useDeleteCabin();
   const { isCreating, createCabin } = useCreateCabin();
+
   const {
     id: cabinId,
     name,
@@ -103,3 +103,4 @@ function CabinRow({ cabin }) {
 }
 
 export default CabinRow;
+/* eslint react/prop-types: 0 */
