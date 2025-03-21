@@ -1,3 +1,4 @@
+/* eslint react/prop-types: 0 */
 import { createContext, useContext } from "react";
 import styled from "styled-components";
 
@@ -28,7 +29,7 @@ const StyledHeader = styled(CommonRow)`
   font-weight: 600;
   color: var(--color-grey-600);
 `;
-
+// eslint-disable-next-line
 const StyledBody = styled.section`
   margin: 0.4rem 0;
 `;
@@ -51,7 +52,7 @@ const Footer = styled.footer`
     display: none;
   }
 `;
-
+// eslint-disable-next-line
 const Empty = styled.p`
   font-size: 1.6rem;
   font-weight: 500;
@@ -86,6 +87,7 @@ function Row({ children }) {
   );
 }
 
+// eslint-disable-next-line
 function Body({ children }) {}
 
 Table.Header = Header;
@@ -94,3 +96,4 @@ Table.Row = Row;
 Table.Footer = Footer;
 
 export default Table;
+/* eslint react/prop-types: 0 */
