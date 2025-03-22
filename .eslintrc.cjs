@@ -22,4 +22,7 @@ module.exports = {
     "no-unused-vars": "off",
   },
   rules: { ..."react/prop-types"["off"] },
+  rules: {
+    "react/jsx-key": [1, { checkFragmentShorthand: true }],
+  },
 };
