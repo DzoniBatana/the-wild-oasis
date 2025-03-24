@@ -38,7 +38,7 @@ const FilterButton = styled.button`
 // eslint-disable-next-line
 function Filter({ filterField, options }) {
   const [searchParams, setSearchParams] = useSearchParams();
-  const currentFilter = searchParams.get(filterField) || options.at[0].value;
+  const currentFilter = searchParams.get(filterField) || options.at[0].value; //.value fali ovde
 
   function handleClick(value) {
     searchParams.set(filterField, value);
@@ -52,6 +52,7 @@ function Filter({ filterField, options }) {
           key={option.value}
           onClick={() => handleClick(option.value)}
           active={option.value === currentFilter}
+          disabled={option.value === currentFilter}
         >
           {option.label}
         </FilterButton>
