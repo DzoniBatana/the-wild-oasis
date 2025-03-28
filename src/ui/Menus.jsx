@@ -1,9 +1,9 @@
-/* eslint react/prop-types: 0 */
+/* eslint-disable */
 import { createContext, useContext, useState } from "react";
 import { createPortal } from "react-dom";
 import { HiEllipsisVertical } from "react-icons/hi2";
 import styled from "styled-components";
-import { useOutisedeClick } from "../hooks/useOutsideClick";
+import { useOutsideClick } from "../hooks/useOutsideClick";
 
 const Menu = styled.div`
   display: flex;
@@ -65,6 +65,7 @@ const StyledButton = styled.button`
     transition: all 0.3s;
   }
 `;
+
 const MenusContext = createContext();
 
 function Menus({ children }) {
@@ -92,7 +93,6 @@ function Toggle({ id }) {
       x: window.innerWidth - rect.width - rect.x,
       y: rect.y + rect.height + 8,
     });
-    //console.log(rect);
 
     openId === "" || openId !== id ? open(id) : close();
   }
@@ -106,7 +106,7 @@ function Toggle({ id }) {
 
 function List({ id, children }) {
   const { openId, position, close } = useContext(MenusContext);
-  const ref = useOutisedeClick(close);
+  const ref = useOutsideClick(close);
 
   if (openId !== id) return null;
 
@@ -120,10 +120,12 @@ function List({ id, children }) {
 
 function Button({ children, icon, onClick }) {
   const { close } = useContext(MenusContext);
+
   function handleClick() {
     onClick?.();
     close();
   }
+
   return (
     <li>
       <StyledButton onClick={handleClick}>
@@ -140,4 +142,3 @@ Menus.List = List;
 Menus.Button = Button;
 
 export default Menus;
-/* eslint react/prop-types: 0 */

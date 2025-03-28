@@ -1,4 +1,4 @@
-/* eslint react/prop-types: 0 */
+/* eslint-disable */
 import { useForm } from "react-hook-form";
 
 import Input from "../../ui/Input";
@@ -11,6 +11,7 @@ import FormRow from "../../ui/FormRow";
 import { useCreateCabin } from "./useCreateCabin";
 import { useEditCabin } from "./useEditCabin";
 
+// eslint-disable-next-line
 function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const { isCreating, createCabin } = useCreateCabin();
   const { isEditing, editCabin } = useEditCabin();
@@ -24,7 +25,6 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   });
   const { errors } = formState;
 
-  // eslint-disable-next-line
   function onSubmit(data) {
     const image = typeof data.image === "string" ? data.image : data.image[0];
 
@@ -32,7 +32,6 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
       editCabin(
         { newCabinData: { ...data, image }, id: editId },
         {
-          // eslint-disable-next-line
           onSuccess: (data) => {
             reset();
             onCloseModal?.();
@@ -43,7 +42,6 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
       createCabin(
         { ...data, image: image },
         {
-          // eslint-disable-next-line
           onSuccess: (data) => {
             reset();
             onCloseModal?.();
@@ -53,7 +51,7 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   }
 
   function onError(errors) {
-    console.log(errors);
+    // console.log(errors);
   }
 
   return (
@@ -160,4 +158,3 @@ function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
 }
 
 export default CreateCabinForm;
-/* eslint react/prop-types: 0 */

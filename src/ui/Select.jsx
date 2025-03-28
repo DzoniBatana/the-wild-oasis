@@ -1,4 +1,4 @@
-/* eslint react/prop-types: 0 */
+/* eslint-disable */
 import styled from "styled-components";
 
 const StyledSelect = styled.select`
@@ -15,7 +15,6 @@ const StyledSelect = styled.select`
   box-shadow: var(--shadow-sm);
 `;
 
-// eslint-disable-next-line
 function Select({ options, value, onChange, ...props }) {
   return (
     <StyledSelect value={value} onChange={onChange} {...props}>
@@ -29,4 +28,3 @@ function Select({ options, value, onChange, ...props }) {
 }
 
 export default Select;
-/* eslint react/prop-types: 0 */

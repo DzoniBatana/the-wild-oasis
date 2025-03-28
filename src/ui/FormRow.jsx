@@ -1,4 +1,4 @@
-/* eslint react/prop-types: 0 */
+/* eslint-disable */
 import styled from "styled-components";
 
 const StyledFormRow = styled.div`
@@ -37,6 +37,7 @@ const Error = styled.span`
   color: var(--color-red-700);
 `;
 
+// eslint-disable-next-line
 function FormRow({ label, error, children }) {
   return (
     <StyledFormRow>
@@ -48,4 +49,3 @@ function FormRow({ label, error, children }) {
 }
 
 export default FormRow;
-/* eslint react/prop-types: 0 */

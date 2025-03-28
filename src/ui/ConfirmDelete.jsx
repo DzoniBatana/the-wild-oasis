@@ -19,14 +19,15 @@ const StyledConfirmDelete = styled.div`
     gap: 1.2rem;
   }
 `;
+
 // eslint-disable-next-line
-function ConfirmDelete({ resource, onConfirm, disabled, onCloseModal }) {
+function ConfirmDelete({ resourceName, onConfirm, disabled, onCloseModal }) {
   return (
     <StyledConfirmDelete>
-      <Heading type="h3">Delete {resource}</Heading>
+      <Heading as="h3">Delete {resourceName}</Heading>
       <p>
-        Are you sure you want to delete this {resource} permanently? This action
-        cannot be undone.
+        Are you sure you want to delete this {resourceName} permanently? This
+        action cannot be undone.
       </p>
 
       <div>

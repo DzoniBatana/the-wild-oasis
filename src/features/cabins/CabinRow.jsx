@@ -1,4 +1,4 @@
-/* eslint react/prop-types: 0 */
+/* eslint-disable */
 import styled from "styled-components";
 
 import CreateCabinForm from "./CreateCabinForm";
@@ -51,9 +51,7 @@ const Discount = styled.div`
 `;
 
 function CabinRow({ cabin }) {
-  // eslint-disable-next-line
   const { isDeleting, deleteCabin } = useDeleteCabin();
-  // eslint-disable-next-line
   const { isCreating, createCabin } = useCreateCabin();
 
   const {
@@ -113,7 +111,7 @@ function CabinRow({ cabin }) {
 
             <Modal.Window name="delete">
               <ConfirmDelete
-                resource="cabins"
+                resourceName="cabins"
                 disabled={isDeleting}
                 onConfirm={() => deleteCabin(cabinId)}
               />
@@ -126,4 +124,3 @@ function CabinRow({ cabin }) {
 }
 
 export default CabinRow;
-/* eslint react/prop-types: 0 */
