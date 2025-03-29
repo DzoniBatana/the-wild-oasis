@@ -71,6 +71,7 @@ function BookingRow({
     "checked-out": "silver",
   };
 
+  //Total new page to add
   return (
     <Table.Row>
       <Cabin>{cabinName}</Cabin>
