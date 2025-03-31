@@ -108,7 +108,7 @@ function BookingRow({
             >
               See details
             </Menus.Button>
-
+            {/* Cheking in */}
             {status === "unconfirmed" && (
               <Menus.Button
                 icon={<HiArrowDownOnSquare />}
@@ -117,7 +117,7 @@ function BookingRow({
                 Check in
               </Menus.Button>
             )}
-
+            {/* Cheking out */}
             {status === "checked-in" && (
               <Menus.Button
                 icon={<HiArrowUpOnSquare />}
@@ -127,7 +127,7 @@ function BookingRow({
                 Check out
               </Menus.Button>
             )}
-
+            {/* Delete booking */}
             <Modal.Open opens="delete">
               <Menus.Button icon={<HiTrash />}>Delete booking</Menus.Button>
             </Modal.Open>
